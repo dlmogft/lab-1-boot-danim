@@ -10,6 +10,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * Spring boot application main class
+ *
+ * The data is created with @PostConstruct init method and saved in the H2 database
+ * that is created in memory on startup
+ */
 @SpringBootApplication
 public class Lab1BootApplication {
 

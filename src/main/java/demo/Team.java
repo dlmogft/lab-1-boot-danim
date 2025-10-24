@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 import java.util.Set;
 
 @XmlRootElement // Necessary to display the team in XML format
-@Entity
+@Entity // Database entity object
 public class Team {
 
     @Id

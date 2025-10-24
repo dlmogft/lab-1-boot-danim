@@ -8,8 +8,16 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
-// This annotation is commented because of the @RestResource annotation in the repositories
-// to avoid that it interferes with it
+/**
+ * Controller to get the different teams with its players
+ *
+ * http://localhost:8080/teams
+ * http://localhost:8080/teams/1
+ * http://localhost:8080/teams/1/players
+ *
+ * The @RestController annotation is commented to avoid interfering with the @RestResource annotation in the repositories
+ *
+ */
 // @RestController
 public class TeamController {
 
