@@ -17,6 +17,7 @@ Spring Web, Thymeleaf, Spring Data JPA, HyperSQL Database, Spring Boot Actuator
   
 # Tips
 
+- The project starting class is annotated with **@SpringBootApplication**
 - The entity classes **Player** and **Team** are annotated with **@Entity** and have an id field annotated with **@Id** and **@GeneratedValue** in order to be saved in the H2 database through JPA
 - The repository classes **TeamRepository** and **PlayerRepository** inherit from **CrudRepository** and are annotated with **@RestResource**, that is used to encapsulate controler and service layers
 - The **TeamController** saves the teams and players in the database using a **@PostConstruct** method. It has to be annotated with **@RestController** only if the TeamRepository and PlayerRepository are NOT annotated with @RestResource, to avoid interfering
