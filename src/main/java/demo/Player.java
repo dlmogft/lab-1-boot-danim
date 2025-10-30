@@ -3,7 +3,9 @@ package demo;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement // Necessary to display the team in XML format
 @Entity // Database entity object
 public class Player {
 
