@@ -8,3 +8,9 @@ spring:
   mvc:
     contentnegotiation:
       favor-parameter: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,health,beans

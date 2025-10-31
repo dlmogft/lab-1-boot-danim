@@ -1,0 +1,19 @@
+meta {
+  name: team XML
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{url}}/teams/1?format=xml
+  body: none
+  auth: inherit
+}
+
+params:query {
+  format: xml
+}
+
+settings {
+  encodeUrl: true
+}

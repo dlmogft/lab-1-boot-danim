@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "lab-1-boot-training",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

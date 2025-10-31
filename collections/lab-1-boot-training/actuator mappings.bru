@@ -1,0 +1,15 @@
+meta {
+  name: actuator mappings
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{url}}/actuator/mappings
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
