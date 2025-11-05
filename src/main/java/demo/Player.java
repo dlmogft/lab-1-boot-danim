@@ -5,6 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
+import java.util.Objects;
+
 @XmlRootElement // Necessary to display the team in XML format
 @Entity // Database entity object
 public class Player {
@@ -48,4 +50,17 @@ public class Player {
     public void setPosition(String position) {
         this.position = position;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Player player = (Player) o;
+        return Objects.equals(name, player.name) && Objects.equals(position, player.position);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, position);
+    }
+
 }

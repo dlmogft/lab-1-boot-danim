@@ -1,13 +1,17 @@
 meta {
-  name: actuator mappings
+  name: teams XML
   type: http
-  seq: 12
+  seq: 3
 }
 
 get {
-  url: {{url}}/actuator/mappings
+  url: {{url}}/teams?format=xml
   body: none
   auth: inherit
+}
+
+params:query {
+  format: xml
 }
 
 settings {

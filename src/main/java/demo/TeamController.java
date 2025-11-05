@@ -6,9 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Controller to get the different teams with its players
  *
@@ -20,7 +17,7 @@ import java.util.List;
  * NOTE: The URL <a href="http://localhost:8080/teams/1?format=xml">...</a> only returns XML format if it's uncommented, otherwise it returns JSON
  *
  */
-// @RestController
+@RestController
 public class TeamController {
 
     @Autowired
@@ -35,19 +32,6 @@ public class TeamController {
     @GetMapping(value = "/teams/{id}", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public Team getTeamById(@PathVariable Long id) {
         return teamRepository.findById(id).get();
-    }
-
-    private List<Team> createTeams() {
-        List<Team> teams = new ArrayList<>();
-        long id = 0L;
-        teams.add(new Team(id++, "Harlem", "Globertroters"));
-        teams.add(new Team(id++, "Washington", "Generals"));
-        teams.add(new Team(id++, "Los Angeles", "Lakers"));
-        teams.add(new Team(id++, "Boston", "Celtics"));
-        teams.add(new Team(id++, "Detroit", "Pistons"));
-        teams.add(new Team(id++, "New York", "Knicks"));
-        teams.add(new Team(id++, "Seattle", "Supersonics"));
-        return teams;
     }
 
 }

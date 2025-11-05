@@ -8,6 +8,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
+import java.util.Objects;
 import java.util.Set;
 
 @XmlRootElement // Necessary to display the team in XML format
@@ -86,5 +87,17 @@ public class Team {
 
     public void setPlayers(Set<Player> players) {
         this.players = players;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Team team = (Team) o;
+        return Objects.equals(name, team.name) && Objects.equals(location, team.location) && Objects.equals(mascot, team.mascot);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, location, mascot);
     }
 }
